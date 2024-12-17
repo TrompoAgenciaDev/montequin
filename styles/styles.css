@@ -26,7 +26,6 @@ ul {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 200px;
 }
 
 .section-container {
@@ -36,7 +35,7 @@ ul {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
 }
 
@@ -82,10 +81,12 @@ ul {
 }
 
 .menu-container {
+    width: 100%;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: flex-end;
+    gap: 0;
 }
 
 .wsapp-button {
@@ -323,7 +324,7 @@ p.footer-hero-text{
 
 .card-item-servicio h3{
     color: var(--blue-violet-color);
-    font-size: 28px;
+    font-size: 22px;
     text-align: center;
 }
 
@@ -413,9 +414,84 @@ p.footer-hero-text{
     font-size: 18px;
 }
 
+/* Paso a paso */
+
+#pasos{
+    background-color: var(--violet-color);
+    padding-bottom: 40px;
+}
+
+#pasos.section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#pasos .grid-item{
+    width: 100%;
+    padding: 16px 24px;
+    background-color: var(--blue-violet-color);
+    border-radius: 25px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+#pasos .grid-item .paso-icon{
+    max-width: 36px;
+}
+
+#pasos .grid-item::before{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--blue-light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 999px;
+    font-size: 18px;
+}
+
+#pasos .grid-item:nth-child(1),
+#pasos .grid-item:nth-child(3){
+    scale: .95;
+}
+
+#pasos .grid-item:nth-child(1)::before{
+    content: '1';
+}
+
+#pasos .grid-item:nth-child(2)::before{
+    content: '2';
+}
+
+#pasos .grid-item:nth-child(3)::before{
+    content: '3';
+}
+
+#pasos p{
+    font-size: 17px;
+    font-weight: 300;
+    letter-spacing: .7px;
+}
+
+
+
 @media (min-width: 1140px) {
     .header{
         overflow-x: hidden;
+    }
+    .header .menu-container{
+        width: 100%;
+        justify-content: flex-end;
+        gap: 50px;
     }
     .grid-container{
         max-width: 955px;
@@ -426,9 +502,6 @@ p.footer-hero-text{
     }
     .container {
         gap: 0;
-    }
-    .menu-container{
-        width: 100%;
     }
     .nav{
         display: block;
@@ -474,6 +547,7 @@ p.footer-hero-text{
         grid-template-columns: 50% 50%;
         justify-content: center;
         align-items: center;
+        gap: 100px;
     }
     #servicios .grid-container .grid-item:last-child{
         display: flex;
@@ -506,75 +580,54 @@ p.footer-hero-text{
     #garantias .grid-item:nth-child(1)::before{
         display: none;
     }
+    .section-title{
+        font-size: 48px;
+    }
+    #garantias .grid-item p{
+        text-align: left;
+    }
+
+    /* paso a paso */
+    #pasos .grid-container{
+        max-width: 1024px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #pasos .grid-container .grid-item{
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 36px 24px 30px;
+        scale: 1;
+    }
+    #pasos .grid-item .paso-icon{
+        min-width: 100%;
+        height: 50px
+    }
+    #pasos .grid-item:nth-child(2){
+        scale: 1.1;
+    }
+
+    /* Faqs */
+    .questions-title{
+        font-size: 19px;
+    }
+    .text-card-container p{
+        font-size: 17px;
+        font-weight: 300;
+    }
+
+    /* Pre footer */
+    .pre-footer .grid-container{
+        padding: 50px 0 60px ;
+        gap: 0;
+    }
+    .pre-footer .grid-item:first-child{
+        grid-template-columns: 1fr !important;
+        gap: 0px !important;
+    }
+
 }
 
-/* Paso a paso */
-
-#pasos{
-    background-color: var(--violet-color);
-    padding-bottom: 40px;
-}
-
-#pasos.section-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-#pasos .grid-item{
-    width: 100%;
-    padding: 16px 24px;
-    background-color: var(--blue-violet-color);
-    border-radius: 25px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-}
-
-#pasos .grid-item svg{
-    min-width: 60px;
-}
-
-#pasos .grid-item::before{
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--blue-light-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 999px;
-    font-size: 18px;
-}
-
-#pasos .grid-item:nth-child(1),
-#pasos .grid-item:nth-child(3){
-    scale: .95;
-}
-
-#pasos .grid-item:nth-child(1)::before{
-    content: '1';
-}
-
-#pasos .grid-item:nth-child(2)::before{
-    content: '2';
-}
-
-#pasos .grid-item:nth-child(3)::before{
-    content: '3';
-}
-
-#pasos p{
-    font-size: 17px;
-    font-weight: 300;
-    letter-spacing: .7px;
-}
 
 /* FAQS */
 
@@ -806,6 +859,9 @@ p.footer-hero-text{
         width: 60px;
         height: 60px;
         font-size: 22px;
+    }
+    #pasos .grid-item .paso-icon{
+        max-width: 40px;
     }
 
     /* Faqs */
