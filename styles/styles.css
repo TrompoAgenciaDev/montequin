@@ -309,10 +309,14 @@ p.footer-hero-text{
 .card-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 70px;
 }
 
 .card-item-servicio{
+    width: 100%;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -482,153 +486,6 @@ p.footer-hero-text{
     font-weight: 300;
     letter-spacing: .7px;
 }
-
-
-
-@media (min-width: 1140px) {
-    .header{
-        overflow-x: hidden;
-    }
-    .header .menu-container{
-        width: 100%;
-        justify-content: flex-end;
-        gap: 50px;
-    }
-    .grid-container{
-        max-width: 955px;
-        grid-template-columns: 1fr 1fr;
-    }
-    .acordeon{
-        max-width: 800px;
-    }
-    .container {
-        gap: 0;
-    }
-    .nav{
-        display: block;
-    }
-    .burguer-button{
-        display: none;
-    }
-    .nav .menu{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-    .menu-item a{
-        text-wrap: nowrap;
-        color: var(--black);
-    }
-    .hero-container .grid-item.shadow-bg::after{
-        width: 600px;
-        height: 450px;
-        transform: rotate(-15deg) translate(-180px, 40px);
-    }
-    .hero-container  .grid-item h1 {
-        font-size: 66px;
-    }    
-    .hero-container  .grid-item p {
-        font-size: 22px;
-    }
-    .text-grid-container span:first-child {
-        font-size: 30px;
-    }    
-    .text-grid-container,
-    .hero-container  p.footer-hero-text{
-        font-size: 20px;
-    }
-
-    /* Servicios */
-    #servicios.section-container{
-        padding: 50px 0 120px;
-    }
-    #servicios .grid-container{
-        grid-template-columns: 50% 50%;
-        justify-content: center;
-        align-items: center;
-        gap: 100px;
-    }
-    #servicios .grid-container .grid-item:last-child{
-        display: flex;
-        padding-top: 50px;
-    }
-    #servicios .grid-container .grid-item:last-child img{
-        border-radius: 25px;
-    }
-    #servicios .grid-container .grid-item:last-child::before{
-        position: absolute;
-        content: "";
-        width: 480px;
-        height: 330px;
-        border-radius: 25px;
-        background-color: var(--blue-violet-color);
-        transform: rotate(10deg) translate(-10px, 10px);
-        z-index: -1;        
-    }
-
-    /* garantias */
-    #garantias {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        padding: 0 50px;
-    }
-    #garantias .section-title{
-        padding: 0 !important;
-        text-align: left;
-    }
-    #garantias .grid-item:nth-child(1)::before{
-        display: none;
-    }
-    .section-title{
-        font-size: 48px;
-    }
-    #garantias .grid-item p{
-        text-align: left;
-    }
-
-    /* paso a paso */
-    #pasos .grid-container{
-        max-width: 1024px;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-    #pasos .grid-container .grid-item{
-        display: flex;
-        flex-direction: column-reverse;
-        justify-content: center;
-        padding: 36px 24px 30px;
-        scale: 1;
-    }
-    #pasos .grid-item .paso-icon{
-        min-width: 100%;
-        height: 50px
-    }
-    #pasos .grid-item:nth-child(2){
-        scale: 1.1;
-    }
-
-    /* Faqs */
-    .questions-title{
-        font-size: 19px;
-    }
-    .text-card-container p{
-        font-size: 17px;
-        font-weight: 300;
-    }
-
-    /* Pre footer */
-    .pre-footer .grid-container{
-        padding: 50px 0 60px ;
-        gap: 0;
-    }
-    .pre-footer .grid-item:first-child{
-        grid-template-columns: 1fr !important;
-        gap: 0px !important;
-    }
-
-}
-
 
 /* FAQS */
 
@@ -837,10 +694,22 @@ p.footer-hero-text{
     }
 
     /* Garantias */
+    #garantias {
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 0 10px;
+    }
     .grid-garantias-container{
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
+    }
+    #garantias .section-title{
+        margin: 0;
     }
     #garantias .grid-item svg{
         max-height: 28px;
@@ -896,5 +765,179 @@ p.footer-hero-text{
     .pre-footer .grid-item:last-child::before{        
         width: 490px;
         height: 350px;
+    }
+}
+
+@media (min-width: 1140px) {
+    .header {
+        overflow-x: hidden;
+    }
+
+    .header .menu-container {
+        width: 100%;
+        justify-content: flex-end;
+        gap: 50px;
+    }
+
+    .grid-container {
+        max-width: 955px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .acordeon {
+        max-width: 800px;
+    }
+
+    .container {
+        gap: 0;
+    }
+
+    .nav {
+        display: block;
+    }
+
+    .burguer-button {
+        display: none;
+    }
+
+    .nav .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .menu-item a {
+        text-wrap: nowrap;
+        color: var(--black);
+    }
+
+    .hero-container .grid-item.shadow-bg::after {
+        width: 600px;
+        height: 450px;
+        transform: rotate(-15deg) translate(-180px, 40px);
+    }
+
+    .hero-container .grid-item h1 {
+        font-size: 66px;
+    }
+
+    .hero-container .grid-item p {
+        font-size: 22px;
+    }
+
+    .text-grid-container span:first-child {
+        font-size: 30px;
+    }
+
+    .text-grid-container,
+    .hero-container p.footer-hero-text {
+        font-size: 20px;
+    }
+
+    /* Servicios */
+    #servicios.section-container {
+        padding: 50px 0 120px;
+    }
+
+    #servicios .grid-container {
+        grid-template-columns: 50% 50%;
+        justify-content: center;
+        align-items: center;
+        gap: 100px;
+    }
+
+    #servicios .grid-container .grid-item:last-child {
+        display: flex;
+        padding-top: 50px;
+    }
+
+    #servicios .grid-container .grid-item:last-child img {
+        border-radius: 25px;
+    }
+
+    #servicios .grid-container .grid-item:last-child::before {
+        position: absolute;
+        content: "";
+        width: 480px;
+        height: 330px;
+        border-radius: 25px;
+        background-color: var(--blue-violet-color);
+        transform: rotate(10deg) translate(-10px, 10px);
+        z-index: -1;
+    }
+
+    /* garantias */
+    #garantias {
+        width: 955px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
+
+    #garantias .section-title {
+        padding: 0 !important;
+        text-align: left;
+    }
+
+    #garantias .grid-item:nth-child(1)::before {
+        display: none;
+    }
+
+    .section-title {
+        font-size: 48px;
+    }
+
+    #garantias .grid-item p {
+        text-align: left;
+    }
+
+    /* paso a paso */
+    #pasos .grid-container {
+        max-width: 1024px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    #pasos .grid-container .grid-item {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding: 36px 24px 30px;
+        scale: 1;
+    }
+
+    #pasos .grid-item .paso-icon {
+        min-width: 100%;
+        height: 50px
+    }
+
+    #pasos .grid-item:nth-child(2) {
+        scale: 1.1;
+    }
+
+    #pasos .grid-item:nth-child(2) p {
+        font-size: 14.8px;
+    }
+
+    /* Faqs */
+    .questions-title {
+        font-size: 19px;
+    }
+
+    .text-card-container p {
+        font-size: 17px;
+        font-weight: 300;
+    }
+
+    /* Pre footer */
+    .pre-footer .grid-container {
+        padding: 50px 0 60px;
+        gap: 0;
+    }
+
+    .pre-footer .grid-item:first-child {
+        grid-template-columns: 1fr !important;
+        gap: 0px !important;
     }
 }
