@@ -15,6 +15,10 @@
     box-sizing: border-box;
 }
 
+img {
+    width: 100%;
+}
+
 ul {
     list-style: none;
 }
@@ -351,8 +355,19 @@ p.footer-hero-text {
     max-width: 60px;
 }
 
-#servicios .grid-container .grid-item:last-child {
-    display: none;
+#servicios .grid-container .grid-item video{
+    border-radius: 25px;
+}
+
+#servicios .grid-container .grid-item:last-child::before {
+    position: absolute;
+    content: "";
+    width: 350px;
+    height: 370px;
+    border-radius: 25px;
+    background-color: var(--blue-violet-color);
+    transform: rotate(10deg) translate(0px, 10px);
+    z-index: -1;
 }
 
 /* Garantias */
@@ -562,6 +577,65 @@ p.footer-hero-text {
 }
 
 
+/* El team */
+
+#team{
+    background-color: var(--blue-violet-color);
+    padding-bottom: 70px;
+}
+
+#team h2{
+    margin-bottom: 30px;
+}
+
+#team .flex-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#team .card{
+    width: 250px;
+    border-radius: 25px;
+    border: 1px solid var(--blue-light-color);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#team .card-title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+
+#team .card-title,
+#team .card-position{
+    color: var(--white);
+    text-align: center;
+}
+
+#team .card-title{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#team .card-position{
+    font-weight: 300;
+    font-style: italic;
+}
+
+#team .card img{
+    border-radius: 999px;
+}
+
 /* Prefooter */
 
 .pre-footer {
@@ -663,11 +737,12 @@ p.footer-hero-text {
     padding: 16px 20px;
 }
 
-.copy, .developed-by{
+.copy,
+.developed-by {
     font-size: 12px;
 }
 
-.developed-by a{
+.developed-by a {
     color: var(--white);
     text-decoration: none;
 }
@@ -781,6 +856,7 @@ p.footer-hero-text {
     }
 
     /* Hero  */
+
     .grid-item h1 {
         font-size: 54px;
     }
@@ -939,16 +1015,6 @@ p.footer-hero-text {
     }
 
     /* Hero */
-    .hero-container,
-    #servicios {
-        height: 80dvh;
-        padding-top: 90px;
-    }
-
-    #pasos {
-        height: 80dvh;
-        padding-bottom: 80px;
-    }
 
     .hero-container .grid-item.shadow-bg::after {
         width: 600px;
@@ -970,7 +1036,11 @@ p.footer-hero-text {
 
     .text-grid-container,
     .hero-container p.footer-hero-text {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .hero-container .grid-item-card {
+        margin-bottom: 0;
     }
 
     /* Servicios */
@@ -990,19 +1060,10 @@ p.footer-hero-text {
         padding-top: 50px;
     }
 
-    #servicios .grid-container .grid-item:last-child img {
-        border-radius: 25px;
-    }
-
     #servicios .grid-container .grid-item:last-child::before {
-        position: absolute;
-        content: "";
         width: 480px;
-        height: 330px;
-        border-radius: 25px;
-        background-color: var(--blue-violet-color);
+        height: 480px;
         transform: rotate(10deg) translate(-10px, 10px);
-        z-index: -1;
     }
 
     /* garantias */
@@ -1068,6 +1129,31 @@ p.footer-hero-text {
         font-weight: 300;
     }
 
+    #team .flex-container {
+        gap: 70px;
+    }
+
+    #team{
+        padding: 70px 0 150px;
+    }
+
+    #team h2{
+        margin-bottom: 40px;
+    }
+
+    #team .card {
+        width: 300px;
+        padding: 30px 30px 40px;
+        gap: 35px;
+    }
+
+    #team .card-title{
+        font-size: 24px;
+    }
+    #team .card-position {
+        font-size: 20px;
+    }
+
     /* Pre footer */
     .pre-footer .grid-container {
         width: 800px;
@@ -1098,7 +1184,17 @@ p.footer-hero-text {
         grid-template-columns: 1fr 1fr;
     }
 
-    .hero-container .shadow-bg h1{
+    .hero-container,
+    #servicios {
+        padding-top: 150px;
+        padding-bottom: 100px;
+    }
+
+    #pasos {
+        padding-bottom: 100px;
+    }
+
+    .hero-container .shadow-bg h1 {
         font-size: 90px;
     }
 
@@ -1107,22 +1203,16 @@ p.footer-hero-text {
         height: 700px;
         transform: rotate(-15deg) translate(-500px, 20px);
     }
-    
-    #servicios .section-title{
+
+    #servicios .section-title {
         font-size: 70px;
     }
 
-    #servicios img{
+    #servicios img {
         scale: 1.3;
     }
 
-    #servicios .grid-container .grid-item:last-child::before {
-        scale: 1.5;
-        transform: rotate(8deg) translate(30px, 10px);
-    }
-
-    .single-margin{
+    .single-margin {
         padding-bottom: 8px;
     }
 }
-
