@@ -262,6 +262,7 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 
     <!-- Google tag (gtag.js) -->
@@ -328,7 +329,28 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
 
     <main class="main">
         <!-- Hero -->
-        <section class="hero-container section-container">
+        <!-- banner V -->
+        <div class="vista">
+            <div class="tabla">
+              <div class="form-container">
+                  <span class="form-title"><strong>CONT&Aacute;CTANOS</strong></span><br> 
+                  <span class="form-subtitle"> Te llamaremos la brevedad </span><br><br>
+                    <form name="form1" method="post" action="datos_financiera.php"  >
+                        <div class="campo-form"><input name="nombre"  placeholder="Nombre y Apellido *"  type="text" size="25" required /></div>
+                        <div class="campo-form"><input name="telefono" placeholder="Tel&eacute;fono *"  type="number" min="11111" minlength="5" size="25"  required /></div>
+                        <div class="campo-form"><input name="email" placeholder="E-mail"  type="email" size="25" required/></div><br><br>
+                        <!-- honeypot -->
+                        <div style="display: none;"><input name="emailSec" type="text"/></div>
+                        <!-- close honeypot -->
+                        <div class="campo-form"><input name="Submit"  type="submit" class="botonform" value="Enviar"   onclick="validacontacto();" /></div><br><br>
+                        <div class="campo-form" style="display:none; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; background-color: #09F; color: #fff; font-size: 18px;  text-align:center; padding:20px; border-radius: 10px">Recibimos su consulta. <br> A la brevedad nos contactaremos.
+                        </div>  
+                    </form>
+                </div>
+            </div>
+        </div>	
+
+        <!-- <section class="hero-container section-container">
             <div class="grid-container">
                 <div class="grid-item shadow-bg">
                     <h1>des<br><span>chequeate</span></h1>
@@ -366,11 +388,9 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
                                 <input name="email" placeholder="E-mail" type="email" size="25" required />
                             </div>
 
-                            <!-- honeypot -->
                             <div>
                                 <input name="emailSec" type="text" style="display: none;" />
                             </div>
-                            <!-- close honeypot -->
 
                             <div>
                                 <input name="Submit" type="submit" class="botonform" value="Enviar"
@@ -385,7 +405,7 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
 
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- Servicios -->
 
@@ -504,7 +524,7 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
                     </div>
                 </div>
                 <div class="grid-item">
-                    <video autoplay controls width="100%" height="auto">
+                    <video autoplay muted controls width="100%" height="auto">
                         <source src="img/cuadrado_carla.mp4" type="video/mp4">
                         Tu navegador no soporta la reproducción de video.
                     </video>
@@ -735,21 +755,21 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
             <h2 class="section-title">Nuestro Equipo</h2>
             <div class="flex-container">
                 <div class="card">
-                    <img src="img/marcelo.png" alt="">
-                    <div class="card-title-container">
-                        <span class="card-title">Marcelo Lohr</span>
-                        <span class="card-position">Cofounder</span>                    
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="img/maximiliano.png" alt="">
+                    <img src="img/maximiliano.webp" alt="">
                     <div class="card-title-container">
                         <span class="card-title">Maximiliano Lohr</span>
                         <span class="card-position">CEO</span>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="img/laura.png" alt="">
+                    <img src="img/marcelo.webp" alt="">
+                    <div class="card-title-container">
+                        <span class="card-title">Marcelo Lohr</span>
+                        <span class="card-position">Founder</span>                    
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img/laura.webp" alt="">
                     <div class="card-title-container">
                         <span class="card-title">Laura Calle</span>
                         <span class="card-position">Directora comercial</span>
