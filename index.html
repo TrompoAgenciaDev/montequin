@@ -330,20 +330,22 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
     <main class="main">
         <!-- Hero -->
         <!-- banner V -->
-        <div class="vista section-container">
+        <div id="hero-section" class="vista section-container">
+            <img src="/img/hero-v.png" alt="" class="mobile-hero">
             <div class="tabla">
               <div class="form-container">
-                  <span class="form-title"><strong>CONT&Aacute;CTANOS</strong></span><br> 
-                  <span class="form-subtitle"> Te llamaremos la brevedad </span><br><br>
+                    <div class="title-container">
+                        <span class="form-title">contáctanos</span>
+                        <span class="form-subtitle"> Te llamaremos la brevedad </span>
+                    </div>
                     <form name="form1" method="post" action="datos_financiera.php"  >
                         <div class="campo-form"><input name="nombre"  placeholder="Nombre y Apellido *"  type="text" size="25" required /></div>
-                        <div class="campo-form"><input name="telefono" placeholder="Tel&eacute;fono *"  type="number" min="11111" minlength="5" size="25"  required /></div>
-                        <div class="campo-form"><input name="email" placeholder="E-mail"  type="email" size="25" required/></div><br><br>
+                        <div class="campo-form"><input name="telefono" placeholder="Tel&eacute;fono *"  type="number" min="11111" minlength="5" size="25" required /></div>
+                        <div class="campo-form"><input name="email" placeholder="E-mail"  type="email" size="25" required/></div>
                         <!-- honeypot -->
                         <div style="display: none;"><input name="emailSec" type="text"/></div>
                         <!-- close honeypot -->
-                        <div class="campo-form"><input name="Submit"  type="submit" class="botonform" value="Enviar"   onclick="validacontacto();" /></div><br><br>
-                        <div class="campo-form" style="display:none; font-family:'Trebuchet MS', Arial, Helvetica, sans-serif; background-color: #09F; color: #fff; font-size: 18px;  text-align:center; padding:20px; border-radius: 10px">Recibimos su consulta. <br> A la brevedad nos contactaremos.
+                        <div class="campo-form"><input name="Submit"  type="submit" class="botonform" value="Enviar"  onclick="validacontacto();"/></div>
                         </div>  
                     </form>
                 </div>
