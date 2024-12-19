@@ -1,6 +1,7 @@
 (
     function (){
         document.addEventListener("DOMContentLoaded", () => {
+            console.log("Hola");
             const openMenu = document.getElementById("open-menu");
             const closeMenu = document.getElementById("close-menu");
             const menuMobile = document.getElementById("menu-mobile");
