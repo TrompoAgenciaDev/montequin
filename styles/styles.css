@@ -1163,7 +1163,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     /* Hero */
 
     .vista {
-        background-image: url("/montequin/montequin/img/hero.png");
+        background-image: url("/montequin/img/hero.png");
         justify-content: center;
         align-items: center;
     }
