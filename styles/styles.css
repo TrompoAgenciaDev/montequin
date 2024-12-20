@@ -17,6 +17,10 @@
     box-sizing: border-box;
 }
 
+body{
+    position: relative;
+}
+
 img {
     width: 100%;
 }
@@ -164,10 +168,6 @@ ul {
 
 
 /* Hero Section */
-
-
-
-
 
 .hero-container h1 {
     margin: 0;
@@ -834,6 +834,28 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 }
 
 
+/* Float Buttons */
+
+.float-button{
+    position: fixed;
+    display: flex;
+    width: 40px;
+    height: 40px;
+    right: 10px;
+    bottom: 20px;
+    border-radius: 999px;
+    padding: 0;
+    margin: 0;
+}
+.float-button a{
+    width: 100%;
+}
+
+.float-button img{
+    width: 100%;
+}
+
+
 @media (min-width: 480px) {
     .grid-item.shadow-bg::after {
         width: 460px;
@@ -922,23 +944,26 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
         height: 44px;
     }
 
-    .wsapp-button {
-        width: 200px;
-        flex-direction: row;
-        align-items: center;
-        gap: 8px;
-        background-color: var(--blue-violet-color);
-        color: var(--white);
-        border-radius: 10px;
-        text-transform: capitalize;
-    }
-
-    .wsapp-button img {
-        width: 32px;
-    }
-
-    .wsapp-button span {
+    .nav {
         display: block;
+    }
+
+    .burguer-button {
+        display: none;
+    }
+
+    .nav .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .menu-item a {
+        text-wrap: nowrap;
+        color: var(--black);
+        font-size: 15px;
     }
 
     /* Hero  */
@@ -1060,9 +1085,21 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
         flex-direction: row;
         text-align: left;
     }
+
+    /* Float button */
+    .float-button {
+        width: 50px;
+        height: 50px;
+        right: 20px;
+        bottom: 20px;
+    }
 }
 
 @media (min-width: 955px) {
+
+    .menu-item a {
+        font-size: 16px;
+    }
 
     .mobile-hero {
         display: none;
@@ -1106,8 +1143,6 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
         height: 44px;
         font-size: 16px;
     }
-
-
 }
 
 @media (min-width: 1140px) {
@@ -1132,32 +1167,6 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 
     .container {
         gap: 0;
-    }
-
-    .nav {
-        display: block;
-    }
-
-    .burguer-button {
-        display: none;
-    }
-
-    .nav .menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
-    }
-
-    .menu-item a {
-        text-wrap: nowrap;
-        color: var(--black);
-        font-size: 16px;
-    }
-
-    .wsapp-button span {
-        font-size: 14px;
     }
 
     /* Hero */
@@ -1355,6 +1364,13 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
         font-size: 18px;
     }
 
+    /* Float button */
+    .float-button {
+        width: 70px;
+        height: 70px;
+        right: 30px;
+        bottom: 20px;
+    }
 }
 
 @media (min-width: 1366px) {

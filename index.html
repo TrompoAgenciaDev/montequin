@@ -304,10 +304,6 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
                         </li>
                     </ul>
                 </nav>
-                <button type="button" class="wsapp-button">
-                    <img class="wsap-icon" src="wspp.svg" alt="logo whatsapp">
-                    <span>chat whatsapp</span>
-                </button>
             </div>
         </div>
     </header>
@@ -331,26 +327,30 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
         <!-- Hero -->
         <!-- banner V -->
         <div id="hero-section" class="vista section-container">
-            <img src="/montequin/img/hero-v.png" alt="" class="mobile-hero">
+            <img src="../img/hero-v.png" alt="" class="mobile-hero">
             <div class="tabla">
-              <div class="form-container">
+                <div class="form-container">
                     <div class="title-container">
                         <span class="form-title">contáctanos</span>
                         <span class="form-subtitle"> Te llamaremos la brevedad </span>
                     </div>
-                    <form name="form1" method="post" action="datos_financiera.php"  >
-                        <div class="campo-form"><input name="nombre"  placeholder="Nombre y Apellido *"  type="text" size="25" required /></div>
-                        <div class="campo-form"><input name="telefono" placeholder="Tel&eacute;fono *"  type="number" min="11111" minlength="5" size="25" required /></div>
-                        <div class="campo-form"><input name="email" placeholder="E-mail"  type="email" size="25" required/></div>
+                    <form name="form1" method="post" action="datos_financiera.php">
+                        <div class="campo-form"><input name="nombre" placeholder="Nombre y Apellido *" type="text"
+                                size="25" required /></div>
+                        <div class="campo-form"><input name="telefono" placeholder="Tel&eacute;fono *" type="number"
+                                min="11111" minlength="5" size="25" required /></div>
+                        <div class="campo-form"><input name="email" placeholder="E-mail" type="email" size="25"
+                                required /></div>
                         <!-- honeypot -->
-                        <div style="display: none;"><input name="emailSec" type="text"/></div>
+                        <div style="display: none;"><input name="emailSec" type="text" /></div>
                         <!-- close honeypot -->
-                        <div class="campo-form"><input name="Submit"  type="submit" class="botonform" value="Enviar"  onclick="validacontacto();"/></div>
-                        </div>  
-                    </form>
+                        <div class="campo-form"><input name="Submit" type="submit" class="botonform" value="Enviar"
+                                onclick="validacontacto();" /></div>
                 </div>
+                </form>
             </div>
-        </div>	
+        </div>
+        </div>
 
         <!-- <section class="hero-container section-container">
             <div class="grid-container">
@@ -767,7 +767,7 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
                     <img src="img/marcelo.webp" alt="">
                     <div class="card-title-container">
                         <span class="card-title">Marcelo Lohr</span>
-                        <span class="card-position">Founder</span>                    
+                        <span class="card-position">Founder</span>
                     </div>
                 </div>
                 <div class="card">
@@ -881,7 +881,11 @@ Cheques Personales y Terceros, Descontá cheques en Montequin, Descuento de Cheq
 
     <!-- scrollTop button -->
 
-    <div class="scroll-top">
+    <div class="float-button">
+        <a href="https://wa.me/5493571600267?text=Hola%20!%20Tengo%20un%20Cheque%20/%20Echeq%20para%20cambiar.%20Podrían%20asesorarme%20para%20cambiarlo%20?"
+            target="_blank" class="wsapp-button">
+            <img src="wspp.svg" alt="logo whatsapp">
+        </a>
 
     </div>
 
