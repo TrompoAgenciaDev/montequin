@@ -17,7 +17,7 @@
     box-sizing: border-box;
 }
 
-body{
+body {
     position: relative;
 }
 
@@ -836,7 +836,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 
 /* Float Buttons */
 
-.float-button{
+.float-button {
     position: fixed;
     display: flex;
     width: 40px;
@@ -847,11 +847,12 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     padding: 0;
     margin: 0;
 }
-.float-button a{
+
+.float-button a {
     width: 100%;
 }
 
-.float-button img{
+.float-button img {
     width: 100%;
 }
 
@@ -1107,7 +1108,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 
     .vista {
         height: 650px;
-        background-image: url("../img/hero-tablet.png");
+        background-image: url("/montequin/img/hero-tablet.png");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1174,7 +1175,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     /* Cuidado con estos paths porque no deben ir con comillas*/
 
     .vista {
-        background-image: url("../img/hero.png");
+        background-image: url("/montequin/img/hero.png");
         justify-content: center;
         align-items: center;
     }
