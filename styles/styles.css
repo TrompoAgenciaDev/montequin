@@ -1070,7 +1070,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 
     .vista {
         height: 650px;
-        background-image: url(/montequin/img/hero-tablet.png);
+        background-image: url("/montequin/img/hero-tablet.png");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1165,7 +1165,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     /* Cuidado con estos paths porque no deben ir con comillas*/
 
     .vista {
-        background-image: url(/montequin/img/hero.png);
+        background-image: url("/montequin/img/hero.png");
         justify-content: center;
         align-items: center;
     }
