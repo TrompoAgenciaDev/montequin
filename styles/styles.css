@@ -1108,7 +1108,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 
     .vista {
         height: 650px;
-        background-image: url("img/hero-tablet.png");
+        background-image: url("../img/hero-tablet.png");
         background-position: left center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -1173,7 +1173,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     /* Hero */
 
     .vista {
-        background-image: url("./img/hero.png");        
+        background-image: url("../img/hero.png");        
         justify-content: center;
         align-items: center;
     }
