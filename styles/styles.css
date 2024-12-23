@@ -662,9 +662,9 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     transition: height .5s;
 }
 
-.list-item-span{
+.list-item-span {
     display: inline-block;
-    margin-left: 10px;
+    margin-left: 16px;
     position: relative;
 }
 
@@ -672,7 +672,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     content: "•";
     color: black;
     position: absolute;
-    left: -5px;
+    left: -10px;
 }
 
 
@@ -1187,7 +1187,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     /* Hero */
 
     .vista {
-        background-image: url("../img/hero.png");        
+        background-image: url("../img/hero.png");
         justify-content: center;
         align-items: center;
     }
