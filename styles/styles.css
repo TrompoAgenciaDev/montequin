@@ -662,13 +662,13 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     transition: height .5s;
 }
 
-.list-item{
+.list-item-span{
     display: block;
     margin-left: 1.5em;
     position: relative;
 }
 
-.list-item::before {
+.list-item-span::before {
     content: "•";
     color: black;
     position: absolute;
