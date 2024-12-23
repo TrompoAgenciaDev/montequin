@@ -27,8 +27,7 @@
                 if (!menuMobile.contains(e.target)) {
                     closeMobileMenu();
                 }
-            });
-            
+            });            
         });
     }
 )();
