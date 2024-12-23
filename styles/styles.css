@@ -663,8 +663,8 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 }
 
 .list-item-span{
-    display: block;
-    margin-left: 1.5em;
+    display: inline-block;
+    margin-left: 10px;
     position: relative;
 }
 
@@ -672,7 +672,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     content: "•";
     color: black;
     position: absolute;
-    left: -1em;
+    left: -5px;
 }
 
 
