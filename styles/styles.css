@@ -662,6 +662,19 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     transition: height .5s;
 }
 
+.list-item{
+    display: block;
+    margin-left: 1.5em;
+    position: relative;
+}
+
+.list-item::before {
+    content: "•";
+    color: black;
+    position: absolute;
+    left: -1em;
+}
+
 
 /* El team */
 
@@ -1060,6 +1073,7 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     }
 
     /* PreFooter */
+
     .pre-footer h3 {
         font-size: 19px;
     }
