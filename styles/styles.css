@@ -662,20 +662,6 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
     transition: height .5s;
 }
 
-.list-item-span {
-    display: inline-block;
-    margin-left: 16px;
-    position: relative;
-}
-
-.list-item-span::before {
-    content: "•";
-    color: black;
-    position: absolute;
-    left: -10px;
-}
-
-
 /* El team */
 
 #team {
