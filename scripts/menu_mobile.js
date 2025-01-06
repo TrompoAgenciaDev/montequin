@@ -6,16 +6,17 @@
             const menuMobile = document.getElementById("menu-mobile");
 
             const closeMobileMenu = () => {
-                openMenu.classList.add("active-menu");                
-                closeMenu.classList.remove("active-menu");
-                menuMobile.classList.remove("show");
+                openMenu.classList.toggle("active-menu");                
+                closeMenu.classList.toggle("active-menu");
+                menuMobile.classList.toggle("show");
             };
 
             openMenu.addEventListener("click", (e) => {
+                console.log("clickeado");
                 e.stopPropagation();
-                openMenu.classList.remove("active-menu");                
-                closeMenu.classList.add("active-menu");
-                menuMobile.classList.add("show");
+                openMenu.classList.toggle("active-menu");                
+                closeMenu.classList.toggle("active-menu");
+                menuMobile.classList.toggle("show");
             });
 
             closeMenu.addEventListener("click", (e) => {
