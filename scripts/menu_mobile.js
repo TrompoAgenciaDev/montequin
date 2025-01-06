@@ -26,7 +26,7 @@
 
             document.addEventListener("click", (e) => {
                 if (!menuMobile.contains(e.target)) {
-                    closeMobileMenu();
+                    menuMobile.classList.remove("show");
                 }
             });            
         });
