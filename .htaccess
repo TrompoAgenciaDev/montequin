@@ -12,3 +12,15 @@ AddDefaultCharset UTF-8
 <IfModule mod_headers.c>
   Header set Content-Type "text/html; charset=UTF-8"
 </IfModule>
+
+# Asegurarse de que los archivos MP4 se sirvan con el tipo MIME correcto
+<IfModule mod_mime.c>
+  AddType video/mp4 .mp4
+</IfModule>
+
+# Habilitar CORS para los archivos de video si es necesario
+<IfModule mod_headers.c>
+  <FilesMatch "\.(mp4|webm|ogg)$">
+    Header set Access-Control-Allow-Origin "*"
+  </FilesMatch>
+</IfModule>
