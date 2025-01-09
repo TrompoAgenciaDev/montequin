@@ -784,7 +784,7 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
             width: 100%;
             height: 320px;
             background-color: var(--white);
-            left: -100vw;
+            left: -200vw;
             top: 70px;
             display: flex;
             justify-content: center;
@@ -1512,6 +1512,51 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
             width: 100%;
         }
 
+
+        /* Slider */
+        .mobile-slider, .items-section {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .slide-item-mobile {
+            flex: 0 0 100%;
+            transition: transform 800ms ease-in-out;
+        }
+
+        .arrow{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            width: 30px;
+            height: 30px;
+            background-color: var(--white); 
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center; 
+            border-radius: 999px;
+        }
+
+        .arrow svg{
+            fill: var(--blue-violet-color);
+            scale: 2.5;
+            margin-top: 5px;
+        }
+
+        .prev-arrow{
+            left: 10px;
+            transform: rotate(90deg);
+        }
+
+        .next-arrow{
+            right: 10px;
+            transform: rotate(-90deg);
+        }
+
         @media (max-width: 767px) {
             #servicios .extra {
                 margin-top: 30px;
@@ -2150,7 +2195,78 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
         <!-- Hero -->
         <!-- banner V -->
         <div id="hero-section" class="vista section-container">
-            <img src="./herov.png" alt="" class="mobile-hero">
+            <!-- <img src="./herov.png" alt="" class="mobile-hero"> -->
+
+            <!-- mobile slider -->
+            <section class="mobile-slider">
+                <div class="items-section">
+                    <section class="slide-item-mobile">
+                        <picture class="mobile-hero">
+                            <source srcset="./img/sliders/slidev-1.webp" type="image/webp">
+                            <source srcset="./img/sliders/slidev-1.png" type="image/png">
+                            <img src="./img/sliders/slidev-1.png" alt="Descripción de la imagen">
+                        </picture>
+                    </section>
+                    
+                    <section class="slide-item-mobile">
+                        <picture class="mobile-hero">
+                            <source srcset="./img/sliders/slidev-2.webp" type="image/webp">
+                            <source srcset="./img/sliders/slidev-2.png" type="image/png">
+                            <img src="./img/sliders/slidev-2.png" alt="Descripción de la imagen">
+                        </picture>
+                    </section>
+    
+                    <section class="slide-item-mobile">
+                        <picture class="mobile-hero">
+                            <source srcset="./img/sliders/slidev-3.webp" type="image/webp">
+                            <source srcset="./img/sliders/slidev-3.png" type="image/png">
+                            <img src="./img/sliders/slidev-3.png" alt="Descripción de la imagen">
+                        </picture>
+                    </section>
+                </div>
+
+                <div class="prev-arrow arrow">
+                    <svg fill="currentColor" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m8.5.5-4 4-4-4" fill="" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 8)"/></svg>
+                </div>
+                <div class="next-arrow arrow">
+                    <svg fill="currentColor" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m8.5.5-4 4-4-4" fill="" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 8)"/></svg>
+                </div>
+            </section>
+
+            <!-- tablet slider -->
+            <section class="tablet-slider">
+                <section class="slide-item">
+                    <picture>
+                    </picture>
+                </section>
+                <section class="slide-item">
+                    <picture>
+                    </picture>
+                </section>
+                <section class="slide-item">
+                    <picture>
+                    </picture>
+                </section>
+            </section>
+
+            <!-- desktop slider -->
+            <section class="desktop-slider">
+                <section class="slide-item">
+                    <picture>
+                    </picture>
+                </section>
+                <section class="slide-item">
+                    <picture>
+                    </picture>
+                </section>
+                <section class="slide-item">
+                    <picture>
+                    </picture>
+                </section>
+            </section>
+
+            <!-- form table -->
+
             <div class="tabla">
                 <div class="form-container">
                     <div class="title-container">
@@ -2733,10 +2849,52 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
         
                     answer.style.height = `${height}px`
                 });
-            });          
+            }); 
+
+
+            //Hero slider
+
+
         });
     </script>
-    <!-- <script src="scripts/questions.js"></script> -->
+
+    <!-- Slider -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.querySelector(".mobile-slider");
+            const slides = Array.from(document.querySelectorAll(".slide-item-mobile"));
+            let currentIndex = 0;
+            const transitionDuration = 800; // en ms
+            const delayBetweenSlides = 2400; // en ms
+        
+            // Duplicar los nodos al final para el efecto de loop infinito
+            slides.forEach((slide) => {
+                const clone = slide.cloneNode(true);
+                slider.appendChild(clone);
+            });
+        
+            function moveToNextSlide() {
+                currentIndex++;
+                slider.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+                slider.style.transform = `translateX(-${100 * currentIndex}%)`;
+        
+                // Resetear cuando se complete el loop
+                if (currentIndex >= slides.length) {
+                    setTimeout(() => {
+                        slider.style.transition = "none";
+                        slider.style.transform = `translateX(0)`;
+                        currentIndex = 0;
+                    }, transitionDuration);
+                }
+            }
+        
+            // Inicializar el carrusel automático
+            setInterval(() => {
+                moveToNextSlide();
+            }, transitionDuration + delayBetweenSlides);
+        });
+    </script>
+        
 
 </body>
 
