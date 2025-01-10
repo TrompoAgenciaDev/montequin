@@ -1514,47 +1514,67 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
 
 
         /* Slider */
-        .mobile-slider, .items-section {
+        .slider {
             display: flex;
             overflow: hidden;
             width: 100%;
             position: relative;
         }
 
-        .slide-item-mobile {
-            flex: 0 0 100%;
-            transition: transform 800ms ease-in-out;
+        .items-section,
+        .mobile-slider {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            position: relative;
         }
 
-        .arrow{
+        .slide-item-mobile {
+            flex: 0 0 100% !important;
+            width: 100%;
+            height: 100%;
+            transition: transform 800ms ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-item-mobile img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .arrow {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
             z-index: 999;
-            width: 30px;
-            height: 30px;
-            background-color: var(--white); 
+            width: 40px;
+            height: 40px;
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center; 
+            align-items: center;
+            border-radius: 999px;
+            cursor: pointer;
+            background-color: var(--grey);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .arrow svg {
+            transform: scale(1.5);
             border-radius: 999px;
         }
 
-        .arrow svg{
-            fill: var(--blue-violet-color);
-            scale: 2.5;
-            margin-top: 5px;
+        .prev-arrow {
+            left: 15px;
+            transform: translateY(-50%) rotate(90deg);
         }
 
-        .prev-arrow{
-            left: 10px;
-            transform: rotate(90deg);
-        }
-
-        .next-arrow{
-            right: 10px;
-            transform: rotate(-90deg);
+        .next-arrow {
+            right: 15px;
+            transform: translateY(-50%) rotate(-90deg);
         }
 
         @media (max-width: 767px) {
@@ -2198,8 +2218,9 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
             <!-- <img src="./herov.png" alt="" class="mobile-hero"> -->
 
             <!-- mobile slider -->
-            <section class="mobile-slider">
-                <div class="items-section">
+            <section class="slider">
+                <div class="items-section mobile-slider">
+
                     <section class="slide-item-mobile">
                         <picture class="mobile-hero">
                             <source srcset="./img/sliders/slidev-1.webp" type="image/webp">
@@ -2207,7 +2228,7 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
                             <img src="./img/sliders/slidev-1.png" alt="Descripción de la imagen">
                         </picture>
                     </section>
-                    
+
                     <section class="slide-item-mobile">
                         <picture class="mobile-hero">
                             <source srcset="./img/sliders/slidev-2.webp" type="image/webp">
@@ -2215,7 +2236,7 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
                             <img src="./img/sliders/slidev-2.png" alt="Descripción de la imagen">
                         </picture>
                     </section>
-    
+
                     <section class="slide-item-mobile">
                         <picture class="mobile-hero">
                             <source srcset="./img/sliders/slidev-3.webp" type="image/webp">
@@ -2226,10 +2247,14 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
                 </div>
 
                 <div class="prev-arrow arrow">
-                    <svg fill="currentColor" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m8.5.5-4 4-4-4" fill="" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 8)"/></svg>
+                    <svg fill="transparent" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m8.5.5-4 4-4-4" fill="" stroke="#4835be" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 8)"/>
+                    </svg>
                 </div>
                 <div class="next-arrow arrow">
-                    <svg fill="currentColor" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg"><path d="m8.5.5-4 4-4-4" fill="" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 8)"/></svg>
+                    <svg fill="transparent" height="21" viewBox="0 0 21 21" width="21" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m8.5.5-4 4-4-4" fill="" stroke="#4835be" stroke-linecap="round" stroke-linejoin="round" transform="translate(6 8)"/>
+                    </svg>
                 </div>
             </section>
 
@@ -2852,47 +2877,86 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
             }); 
 
 
-            //Hero slider
-
-
         });
     </script>
 
     <!-- Slider -->
-    <script>
+     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const slider = document.querySelector(".mobile-slider");
             const slides = Array.from(document.querySelectorAll(".slide-item-mobile"));
+            const totalSlides = slides.length;
             let currentIndex = 0;
-            const transitionDuration = 800; // en ms
-            const delayBetweenSlides = 2400; // en ms
-        
-            // Duplicar los nodos al final para el efecto de loop infinito
-            slides.forEach((slide) => {
-                const clone = slide.cloneNode(true);
-                slider.appendChild(clone);
-            });
-        
+            const transitionDuration = 800;
+            const delayBetweenSlides = 2400;
+            let autoSlideInterval;
+
+            const firstClone = slides[0].cloneNode(true);
+            const lastClone = slides[totalSlides - 1].cloneNode(true);
+            slider.appendChild(firstClone);
+            slider.insertBefore(lastClone, slides[0]);
+
+            const allSlides = Array.from(slider.children);
+            slider.style.width = `${allSlides.length * 100}%`;
+            allSlides.forEach(slide => (slide.style.width = `${100 / allSlides.length}%`));
+
+            const slideWidth = slider.offsetWidth;
+            slider.style.transform = `translateX(-${slideWidth}px)`;
+
             function moveToNextSlide() {
                 currentIndex++;
                 slider.style.transition = `transform ${transitionDuration}ms ease-in-out`;
-                slider.style.transform = `translateX(-${100 * currentIndex}%)`;
-        
-                // Resetear cuando se complete el loop
-                if (currentIndex >= slides.length) {
+                slider.style.transform = `translateX(-${slideWidth * (currentIndex + 1)}px)`;
+
+                if (currentIndex >= totalSlides) {
                     setTimeout(() => {
                         slider.style.transition = "none";
-                        slider.style.transform = `translateX(0)`;
+                        slider.style.transform = `translateX(-${slideWidth}px)`;
                         currentIndex = 0;
                     }, transitionDuration);
                 }
             }
-        
-            // Inicializar el carrusel automático
-            setInterval(() => {
+
+            function moveToPrevSlide() {
+                currentIndex--;
+                slider.style.transition = `transform ${transitionDuration}ms ease-in-out`;
+                slider.style.transform = `translateX(-${slideWidth * (currentIndex + 1)}px)`;
+
+                if (currentIndex < 0) {
+                    setTimeout(() => {
+                        slider.style.transition = "none";
+                        slider.style.transform = `translateX(-${slideWidth * totalSlides}px)`;
+                        currentIndex = totalSlides - 1;
+                    }, transitionDuration);
+                }
+                resetAutoSlide();
+            }
+
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(() => {
+                    moveToNextSlide();
+                }, transitionDuration + delayBetweenSlides);
+            }
+
+            document.querySelector(".next-arrow").addEventListener("click", () => {
+                moveToNextSlide();
+                resetAutoSlide();
+            });
+
+            document.querySelector(".prev-arrow").addEventListener("click", moveToPrevSlide);
+
+            autoSlideInterval = setInterval(() => {
                 moveToNextSlide();
             }, transitionDuration + delayBetweenSlides);
+
+            window.addEventListener("resize", () => {
+                const newSlideWidth = slider.offsetWidth;
+                slider.style.transition = "none";
+                slider.style.transform = `translateX(-${newSlideWidth * (currentIndex + 1)}px)`;
+            });
         });
+
     </script>
         
 
