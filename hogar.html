@@ -1529,17 +1529,16 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
             position: relative;
         }
 
-        .slide-item-mobile {
+        .slide-item {
             flex: 0 0 100% !important;
             width: 100%;
-            height: 100%;
             transition: transform 800ms ease-in-out;
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
-        .slide-item-mobile img {
+        .slide-item img {
             width: 100%;
             height: auto;
             object-fit: cover;
@@ -1575,6 +1574,10 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
         .next-arrow {
             right: 15px;
             transform: translateY(-50%) rotate(-90deg);
+        }
+
+        .tablet-hero, .desktop-hero {
+            display: none;
         }
 
         @media (max-width: 767px) {
@@ -1709,7 +1712,7 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
             }
 
             #hero-section .tabla {
-                padding: 70px 0;
+                padding: 60px 20px 60px 0;
             }
 
             #hero-section .form-title {
@@ -1720,6 +1723,18 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
                 font-size: 20px;
             }
 
+            .mobile-hero, .desktop-hero {
+                display: none;
+            }
+
+            .tablet-hero{
+                display: block;
+            }
+
+            .arrow{
+                width: 30px;
+                height: 30px;
+            }
             /* Garantias */
             #garantias {
                 height: auto;
@@ -1829,20 +1844,30 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
                 font-size: 16px;
             }
 
-            .mobile-hero {
+            .mobile-hero, .tablet-hero{
                 display: none;
             }
 
+            .desktop-hero{
+                display: block;
+                width: 100%;
+            }
+
+            .slider{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+
             .vista {
-                height: 650px;
-                background-image: url("./herot.png");
-                background-position: left center;
-                background-repeat: no-repeat;
-                background-size: cover;
+                height: 800px;
                 display: flex;
                 flex-direction: row;
                 justify-content: flex-end;
                 padding: 0 50px;
+                position: relative;
             }
 
             .tabla {
@@ -2215,33 +2240,68 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
         <!-- Hero -->
         <!-- banner V -->
         <div id="hero-section" class="vista section-container">
-            <!-- <img src="./herov.png" alt="" class="mobile-hero"> -->
 
             <!-- mobile slider -->
             <section class="slider">
                 <div class="items-section mobile-slider">
 
-                    <section class="slide-item-mobile">
+                    <section class="slide-item">
                         <picture class="mobile-hero">
                             <source srcset="./img/sliders/slidev-1.webp" type="image/webp">
                             <source srcset="./img/sliders/slidev-1.png" type="image/png">
                             <img src="./img/sliders/slidev-1.png" alt="Descripción de la imagen">
                         </picture>
+
+                        <picture class="tablet-hero">
+                            <source srcset="./img/sliders/slidet-1.webp" type="image/webp">
+                            <source srcset="./img/sliders/slidet-1.png" type="image/png">
+                            <img src="./img/sliders/slidet-1.png" alt="Descripción de la imagen">
+                        </picture>
+
+                        <picture class="desktop-hero">
+                            <source srcset="./img/sliders/slideh-1.webp" type="image/webp">
+                            <source srcset="./img/sliders/slideh-1.png" type="image/png">
+                            <img src="./img/sliders/slideh-1.png" alt="Descripción de la imagen">
+                        </picture>
                     </section>
 
-                    <section class="slide-item-mobile">
+                    <section class="slide-item">
                         <picture class="mobile-hero">
                             <source srcset="./img/sliders/slidev-2.webp" type="image/webp">
                             <source srcset="./img/sliders/slidev-2.png" type="image/png">
                             <img src="./img/sliders/slidev-2.png" alt="Descripción de la imagen">
                         </picture>
+
+                        <picture class="tablet-hero">
+                            <source srcset="./img/sliders/slidet-2.webp" type="image/webp">
+                            <source srcset="./img/sliders/slidet-2.png" type="image/png">
+                            <img src="./img/sliders/slidet-2.png" alt="Descripción de la imagen">
+                        </picture>
+                        
+                        <picture class="desktop-hero">
+                            <source srcset="./img/sliders/slideh-2.webp" type="image/webp">
+                            <source srcset="./img/sliders/slideh-2.png" type="image/png">
+                            <img src="./img/sliders/slideh-2.png" alt="Descripción de la imagen">
+                        </picture>
                     </section>
 
-                    <section class="slide-item-mobile">
+                    <section class="slide-item">
                         <picture class="mobile-hero">
                             <source srcset="./img/sliders/slidev-3.webp" type="image/webp">
                             <source srcset="./img/sliders/slidev-3.png" type="image/png">
                             <img src="./img/sliders/slidev-3.png" alt="Descripción de la imagen">
+                        </picture>
+
+                        <picture class="tablet-hero">
+                            <source srcset="./img/sliders/slidet-3.webp" type="image/webp">
+                            <source srcset="./img/sliders/slidet-3.png" type="image/png">
+                            <img src="./img/sliders/slidet-3.png" alt="Descripción de la imagen">
+                        </picture>
+                        
+                        <picture class="desktop-hero">
+                            <source srcset="./img/sliders/slideh-3.webp" type="image/webp">
+                            <source srcset="./img/sliders/slideh-3.png" type="image/png">
+                            <img src="./img/sliders/slideh-3.png" alt="Descripción de la imagen">
                         </picture>
                     </section>
                 </div>
@@ -2884,7 +2944,7 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
      <script>
         document.addEventListener("DOMContentLoaded", () => {
             const slider = document.querySelector(".mobile-slider");
-            const slides = Array.from(document.querySelectorAll(".slide-item-mobile"));
+            const slides = Array.from(document.querySelectorAll(".slide-item"));
             const totalSlides = slides.length;
             let currentIndex = 0;
             const transitionDuration = 800;
