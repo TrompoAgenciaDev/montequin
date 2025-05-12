@@ -839,8 +839,8 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 .float-button {
     position: fixed;
     display: flex;
-    width: 100px;
-    height: 100px;
+    width: 10px;
+    height: 10px;
     right: 10px;
     bottom: 20px;
     border-radius: 999px;
@@ -1090,8 +1090,8 @@ No borro lo otro por las dudas se necesite. Solo está comentado.
 
     /* Float button */
     .float-button {
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
         right: 20px;
         bottom: 20px;
     }
