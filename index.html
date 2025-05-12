@@ -107,12 +107,6 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
                 return;
             }
 
-            if (document.form1.telefono.value == "") {
-                alert("Complete el Tel&eacute;fono")
-                document.form1.telefono.focus();
-                return;
-            }
-
             //	if (document.form1.email.value=="") {
             //	alert("Complete el E-mail")
             //document.form1.email.focus();
@@ -2681,8 +2675,6 @@ Cheques Personales y Terceros, Descont&aacute; cheques en Montequin, Descuento d
                     <form name="form1" method="post" action="datos_financiera.php">
                         <div class="campo-form"><input name="nombre" placeholder="Nombre y Apellido *" type="text"
                                 size="25" required /></div>
-                        <div class="campo-form"><input name="telefono" placeholder="Tel&eacute;fono *" type="number"
-                                min="11111" minlength="5" size="25" required /></div>
                         <div class="campo-form"><input name="email" placeholder="E-mail" type="email" size="25"
                                 required /></div>
                         <!-- honeypot -->

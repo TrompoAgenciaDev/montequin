@@ -1,13 +1,12 @@
 <?
 $nombre = $_POST['nombre'];
-$telefono = $_POST['telefono'];
 $email = $_POST['email'];
 $honeyPot = $_POST['emailSec'];
 
 $subject="Montequin Financiera - Nuevo Cliente";
 $from="montequin_financiera@viglum.ar";
 
-$html = "Nombre:  $nombre \nTeléfono:  $telefono \nEmail:  $email \nMensaje enviado desde: https://montequincreditos.com.ar/";
+$html = "Nombre:  $nombre \nEmail:  $email \nMensaje enviado desde: https://montequincreditos.com.ar/";
 
 $destinatario="financiera@montequin.com.ar, marketing@trompoagencia.com";
 
